@@ -51,7 +51,7 @@ function Header() {
                 variant="h6"
                 color="primary"
                 fontWeight={700}
-                sx={{ mr: 2 }}
+                sx={{ mr: 2, textTransform: "uppercase" }}
               >
                 <Link to="/" style={{ textDecoration: "none", color: "#1976d2" }}>
                   Metrocat

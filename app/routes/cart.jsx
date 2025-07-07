@@ -6,13 +6,13 @@ import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
 import Card from "@mui/material/Card";
 import Divider from "@mui/material/Divider";
-import { Link } from "react-router";
+import { Link, useNavigate } from "react-router";
 import CartItems from "../../components/features/Carts/CartItems";
 
-export default function Cart() {
+export default function Cart(){ 
   const cart = useSelector((state) => state.cartItems.cartItems);
   const products = useSelector((state) => state.products);
-
+  
   const cartItems = cart
     .map((item) => {
       const product = products.find((p) => p.id === item.id);
@@ -28,6 +28,11 @@ export default function Cart() {
   const tax =
     cartItems.length > 0 ? Math.round(subtotal * 0.08 * 100) / 100 : 0;
   const total = subtotal + shipping + tax;
+
+  const navigate = useNavigate();
+  const handleCheckout = () => {
+    navigate("/checkout");
+  };
 
   return (
     <Box sx={{ bgcolor: "#f5f6fa", minHeight: "100vh" }}>
@@ -87,17 +92,19 @@ export default function Cart() {
                   ${total.toFixed(2)}
                 </Typography>
               </Box>
-              <Link to="/checkout" style={{ textDecoration: "none" }}>
+              {/* <Link to="/checkout" style={{ textDecoration: "none" }}> */}
                 <Button
                   variant="contained"
                   color="primary"
                   fullWidth
                   size="large"
-                  sx={{ mb: 2, fontWeight: 700 }}
+                  sx={{ mb: 2, fontWeight: 700,}}
+                  disabled={cartItems.length === 0}
+                  onClick={handleCheckout}
                 >
                   Proceed to Checkout
                 </Button>
-              </Link>
+              {/* </Link> */}
               <Link to="/" style={{ textDecoration: "none" }}>
                 <Button variant="outlined" fullWidth size="large">
                   Continue Shopping
