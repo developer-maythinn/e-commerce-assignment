@@ -11,6 +11,8 @@ import { decreaseQuantity, increaseQuantity, removeItem } from "../../../store/s
 import { useDispatch } from "react-redux";
 import Quantity from "../Quantity";
 import { Grid } from "@mui/material";
+
+
 function CartItem({ item }) {
   const navigate = useNavigate();
   const dispatch = useDispatch();
@@ -32,6 +34,7 @@ function CartItem({ item }) {
             component="img"
             image={item.img}
             alt={item.title}
+            onClick={() => navigate(`/product/${item.id}`)}
             sx={{
               width: {xs: "100%", sm:70},
               height: 70,
@@ -39,11 +42,12 @@ function CartItem({ item }) {
               borderRadius: 2,
               mr: 2,
               bgcolor: "#f5f6fa",
+              cursor: "pointer"
             }}
           />
         </Grid>
 
-        <Grid size={{ xs: 12, sm: 4 }} sx={{my: {xs: 2, sm: 0}}}>
+        <Grid size={{ xs: 12, sm: 4 }} sx={{my: {xs: 2, sm: 0, cursor: "pointer"}}} onClick={() => navigate(`/product/${item.id}`)}>
           <Typography fontWeight={600}>{item.title}</Typography>
           <Typography variant="body2" color="text.secondary">
             {item.desc}
