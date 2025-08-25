@@ -1,8 +1,14 @@
+import React from "react";
 import { useNavigate } from "react-router";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
+import Card from "@mui/material/Card";
+import CardContent from "@mui/material/CardContent";
 import CardMedia from "@mui/material/CardMedia";
+import CardActions from "@mui/material/CardActions";
+import IconButton from "@mui/material/IconButton";
+import FavoriteBorderIcon from "@mui/icons-material/FavoriteBorder";
 import { addToCart } from "../../../store/slices/cartSlice";
 import { useDispatch } from "react-redux";
 import Box from "@mui/material/Box";

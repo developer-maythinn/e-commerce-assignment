@@ -4,4 +4,7 @@ export default [index("routes/home.jsx"),
 route("/cart", "routes/cart.jsx"),
 route("/checkout", "routes/checkout.jsx"),
 route("/product/:id", "routes/product.jsx"),
+route("/login", "routes/login.jsx"),
+route("/register", "routes/register.jsx"),
+route("/fileupload", "routes/fileupload.jsx"),
 ];
