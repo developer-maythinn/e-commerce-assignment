@@ -107,11 +107,11 @@ function Header() {
                   </Badge>
                 </IconButton>
               </Link>
-               <Link to="/login">
+               {/* <Link to="/login">
                  <Button variant="outlined" size="small">
                    Login
                  </Button>
-               </Link>
+               </Link> */}
             </Box>
           </Toolbar>
         </AppBar>
