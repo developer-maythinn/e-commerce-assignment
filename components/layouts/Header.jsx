@@ -1,16 +1,9 @@
-import {
-  AppBar,
-  Box,
-  IconButton,
-  Toolbar,
-  Typography,
-} from "@mui/material";
+import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
 import { useSelector } from "react-redux";
 import { totalCount } from "../../store/slices/cartSlice";
-
 
 import MenuIcon from "@mui/icons-material/Menu";
 import Drawer from "@mui/material/Drawer";
@@ -44,37 +37,70 @@ function Header() {
           elevation={0}
           sx={{ borderBottom: 1, borderColor: "divider" }}
         >
-          <Toolbar sx={{ justifyContent: "space-between", flexWrap: "wrap",  }}>
+          <Toolbar sx={{ justifyContent: "space-between", flexWrap: "wrap" }}>
             {/* Logo */}
-            <Box sx={{ display: "flex", alignItems: "center", flex: { xs: 1, md: 'none' } }}>
+            <Box
+              sx={{
+                display: "flex",
+                alignItems: "center",
+                flex: { xs: 1, md: "none" },
+              }}
+            >
               <Typography
                 variant="h6"
                 color="primary"
                 fontWeight={700}
                 sx={{ mr: 2, textTransform: "uppercase" }}
               >
-                <Link to="/" style={{ textDecoration: "none", color: "#1976d2" }}>
+                <Link
+                  to="/"
+                  style={{ textDecoration: "none", color: "#1976d2" }}
+                >
                   Metrocat
                 </Link>
               </Typography>
             </Box>
 
             {/* Main Menu for md+ */}
-            <Box sx={{ display: { xs: 'none', md: 'flex' }, gap: 3, flex: 1, justifyContent: 'center' }}>
+            <Box
+              sx={{
+                display: { xs: "none", md: "flex" },
+                gap: 3,
+                flex: 1,
+                justifyContent: "center",
+              }}
+            >
               {menuItems.map((item) => (
-                <Link key={item.to} to={item.to} style={{ textDecoration: 'none', color: '#1976d2', fontWeight: 500 }}>{item.label}</Link>
+                <Link
+                  key={item.to}
+                  to={item.to}
+                  style={{
+                    textDecoration: "none",
+                    color: "#1976d2",
+                    fontWeight: 500,
+                  }}
+                >
+                  {item.label}
+                </Link>
               ))}
             </Box>
 
             {/* Hamburger for xs/sm */}
-            <Box sx={{ display: { xs: 'flex', md: 'none' }, alignItems: 'center' }}>
-              <IconButton edge="start" color="inherit" aria-label="menu" onClick={handleDrawerToggle}>
+            <Box
+              sx={{ display: { xs: "flex", md: "none" }, alignItems: "center" }}
+            >
+              <IconButton
+                edge="start"
+                color="inherit"
+                aria-label="menu"
+                onClick={handleDrawerToggle}
+              >
                 <MenuIcon />
               </IconButton>
             </Box>
 
             {/* Cart Icon */}
-            <Box sx={{ display: 'flex', alignItems: 'center' }}>
+            <Box sx={{ display: "flex", alignItems: "center" }}>
               <Link to="/cart">
                 <IconButton size="large">
                   <Badge badgeContent={totalCountItem} color="primary">
@@ -88,7 +114,11 @@ function Header() {
 
         {/* Drawer for mobile menu */}
         <Drawer anchor="left" open={drawerOpen} onClose={handleDrawerToggle}>
-          <Box sx={{ width: 220 }} role="presentation" onClick={handleDrawerToggle}>
+          <Box
+            sx={{ width: 220 }}
+            role="presentation"
+            onClick={handleDrawerToggle}
+          >
             <List>
               {menuItems.map((item) => (
                 <ListItem key={item.to} disablePadding>

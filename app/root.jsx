@@ -13,6 +13,7 @@ import ThemeProvider from "../components/theme/ThemeProvider.jsx";
 import "./app.css";
 import Header from "../components/layouts/Header";
 import Footer from "../components/layouts/Footer";
+import CommonSnackbar from "../components/Common/CommonSnackbar.jsx";
 
 export const links = () => [
   { rel: "preconnect", href: "https://fonts.googleapis.com" },
@@ -54,6 +55,7 @@ export default function App() {
     <Provider store={store}>
       <ThemeProvider>
         <Header />
+        <CommonSnackbar />
         <Outlet />
         <Footer />
       </ThemeProvider>
