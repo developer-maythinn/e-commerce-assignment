@@ -6,4 +6,5 @@ route("/checkout", "routes/checkout.jsx"),
 route("/product/:id", "routes/product.jsx"),
 route("/login", "routes/login.jsx"),
 route("/register", "routes/register.jsx"),
+route("/fileUpload", "routes/fileUpload.jsx"),
 ];

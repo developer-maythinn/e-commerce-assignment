@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Toolbar, Typography } from "@mui/material";
+import { AppBar, Box, Button, IconButton, Toolbar, Typography } from "@mui/material";
 import { Link } from "react-router";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import Badge from "@mui/material/Badge";
@@ -38,7 +38,6 @@ function Header() {
           sx={{ borderBottom: 1, borderColor: "divider" }}
         >
           <Toolbar sx={{ justifyContent: "space-between", flexWrap: "wrap" }}>
-            {/* Logo */}
             <Box
               sx={{
                 display: "flex",
@@ -108,6 +107,11 @@ function Header() {
                   </Badge>
                 </IconButton>
               </Link>
+               <Link to="/login">
+                 <Button variant="outlined" size="small">
+                   Login
+                 </Button>
+               </Link>
             </Box>
           </Toolbar>
         </AppBar>

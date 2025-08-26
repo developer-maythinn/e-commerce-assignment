@@ -56,7 +56,9 @@ export default function App() {
       <ThemeProvider>
         <Header />
         <CommonSnackbar />
-        <Outlet />
+        <div style={{marginBottom: "4rem" }}>
+          <Outlet />
+        </div>
         <Footer />
       </ThemeProvider>
     </Provider>
@@ -91,5 +93,3 @@ export function ErrorBoundary({ error }) {
     </main>
   );
 }
-
-
